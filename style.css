@@ -1,0 +1,30 @@
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #000000;
+    color: rgb(255, 115, 0);
+    font-size: 100px;
+    text-transform: uppercase;
+    font-family: sans-serif;
+    text-shadow: 0 3px 20px red, 0 0 20px red, 0 0 10px orange, 4px -5px 6px yellow, -4px -10px 10px yellow, 0 -10px 30px yellow;
+  }
+  .counter {
+    counter-reset: ms var(--number);
+    animation: count 10s steps(10) infinite;
+  }
+  .counter::after {
+    content: counter(ms);
+    font-size: 10vw;
+  }
+  @property --number {
+    inherits: false;
+    syntax: '<integer>';
+    initial-value: 0;
+  }
+  @keyframes count {
+    0% {
+      --number: 10;
+    }
+  }
+  
